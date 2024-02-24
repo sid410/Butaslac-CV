@@ -19,7 +19,9 @@ jobs:
     - name: Compile LaTeX Document using Docker
       run: |
         mkdir -p ${{ github.workspace }}/build
-        docker run --rm -v ${{ github.workspace }}:/workdir texlive/texlive pdflatex -output-directory=/workdir/build /workdir/butaslac_cv.tex
+        docker run --rm -v ${{ github.workspace }}:/workdir texlive/texlive /bin/sh -c "\
+          pdflatex -output-directory=/workdir/build /workdir/butaslac_cv.tex && \
+          pdflatex -output-directory=/workdir/build /workdir/butaslac_cv.tex"
 
     - name: Create a new tag
       env:
