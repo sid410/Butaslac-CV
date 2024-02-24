@@ -15,19 +15,10 @@ jobs:
     - uses: actions/checkout@v4
       with:
         fetch-depth: 0 # Ensures the action checks out all branches and tags for proper tagging
-    
-    - name: Install LaTeX
-      run: sudo apt-get install texlive-full
 
-    - name: Update tlmgr and install lastpage package
+    - name: Compile LaTeX Document using Docker
       run: |
-        sudo tlmgr update --self
-        sudo tlmgr install lastpage
-      
-    - name: Compile LaTeX Document
-      run: |
-        mkdir -p build
-        pdflatex -output-directory=build butaslac_cv.tex
+        docker run --rm -v ${{ github.workspace }}:/workdir texlive/texlive pdflatex -output-directory=build /workdir/butaslac_cv.tex
 
     - name: Create a new tag
       env:
