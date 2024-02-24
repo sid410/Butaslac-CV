@@ -10,6 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0 # Ensures the action checks out all branches and tags for proper tagging
     
     - name: Install LaTeX
       run: sudo apt-get install texlive-full
@@ -18,10 +20,26 @@ jobs:
       run: |
         mkdir -p build
         pdflatex -output-directory=build butaslac_cv.tex
-    
+
+    - name: Create a new tag
+      id: new_tag
+      env:
+        TZ: 'Asia/Tokyo'
+      run: |
+        # Create a tag based on the current date and time
+        TAG=$(date +v%Y%m%d-%H%M%S)
+        echo "Creating tag $TAG"
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git tag $TAG
+        git push origin $TAG
+        echo "::set-output name=tag::$TAG" # Set the tag as an output to use in the next step
+
     - name: Create Release
       uses: softprops/action-gh-release@v1
       with:
         files: build/butaslac_cv.pdf
+        tag_name: ${{ steps.new_tag.outputs.tag }}
+        name: Release ${{ steps.new_tag.outputs.tag }}
       env:
-        GITHUB_TOKEN: ${{ secrets.PAT }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
