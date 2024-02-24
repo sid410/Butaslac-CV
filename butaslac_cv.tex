@@ -1,0 +1,64 @@
+\documentclass[letterpaper,11pt]{article}
+
+\input{config/preamble.tex}
+\input{config/custom_commands.tex}
+
+\begin{document}
+
+%----------Picture----------
+% add/remove as needed
+\begin{wrapfigure}{r}{0.3\textwidth}
+	\vspace{-6pt}
+	\hfill\includegraphics[width=0.23\textwidth]{images/mypic-square.png}
+\end{wrapfigure}
+
+%----------HEADING----------
+{\LARGE \scshape \textbf{Isidro Butaslac III, PhD}} \\
+
+\begin{adjustwidth}{0.3cm}{0cm}
+
+	{\textbf{AR · VR · IoT}} \\
+	{University of Science and Technology of Southern Philippines} \\
+	{Office of the Vice Chancellor for Research and Innovation} \\
+	{\href{https://www.rspotsolutions.com/}{RSPOT}-\href{https://www.ustp.edu.ph/}{USTP} IoT Lab $|$ Researcher/Programmer} \\
+	{Cagayan de Oro City, Philippines} \\
+	% {\texttt{-----}} \\
+
+	\vspace{3pt}
+
+	\begin{tabular}{@{} l l}
+		{\faEnvelope\ \footnotesize\href{mailto:isidro.butaslac@ustp.edu.ph}{isidro.butaslac@ustp.edu.ph} }               &
+		{\faPhone\ \footnotesize\texttt{+63--917--157--1600}}                                                                                                         \\
+
+		{\faLinkedin\ \footnotesize\href{https://www.linkedin.com/in/isidro-butaslac/}{linkedin.com/in/isidro-butaslac} } &
+		{\resizebox{4mm}{!}{{\faResearchgate}}\ \footnotesize\href{https://www.researchgate.net/profile/Isidro-Butaslac/}{researchgate.net/profile/Isidro-Butaslac} } \\
+
+		{\faGithub\ \footnotesize\href{https://github.com/sid410}{github.com/sid410} }                                    &
+		{\faBriefcase\ \footnotesize\href{https://sid410.github.io/sid410-portfolio/}{sid410.github.io/sid410-portfolio} }                                            \\
+	\end{tabular}
+
+\end{adjustwidth}
+
+
+%-----------Sections-----------
+\vspace{-10pt}
+\input{sections/research_experience.tex}
+\input{sections/education.tex}
+\vspace{3pt}
+\input{sections/publications.tex}
+\input{sections/projects.tex}
+\input{sections/teaching_experience.tex}
+\input{sections/mentoring_experience.tex}
+\input{sections/presentations.tex}
+\input{sections/awards.tex}
+\input{sections/skills.tex}
+% \input{sections/references.tex}
+
+
+%----------Update day----------
+\vfill{}
+\begin{center}
+	{\textcolor{darkgray}{\small \texttt{-----} Last updated: \today\- \-\texttt{-----}}}
+\end{center}
+
+\end{document}

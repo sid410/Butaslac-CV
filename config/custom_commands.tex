@@ -1,0 +1,121 @@
+%-------------------------
+% CV Entry Formatting Commands
+%-------------------------
+
+% Standard CV item
+\newcommand{\cvItem}[1]{
+	\item\small{{#1}}
+}
+
+% Simplified item for a sub-list
+\newcommand{\cvSubItem}[1]{\cvItem{#1}}
+
+% Subheading for sections like experience, education, etc.
+\newcommand{\cvSubheading}[4]{
+	\item\begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+		\textbf{#1} & \textbf{\small #2} \\
+		\small#3 & \small #4 \\
+	\end{tabular*}
+	\vspace{-12pt}
+}
+
+% Sub-subheading for additional details under a subheading
+\newcommand{\cvSubSubheading}[2]{
+	\vspace{-2pt}
+	\item\begin{tabular*}{1.0\textwidth}{l@{\extracolsep{\fill}}r}
+		\small#1 & \textbf{\small #2} \\
+	\end{tabular*}
+	\vspace{-20pt}
+}
+
+% Heading for projects
+\newcommand{\cvProjectHeading}[2]{
+	\item\begin{tabular*}{1.0\textwidth}{l@{\extracolsep{\fill}}r}
+		\small#1 & \textbf{\small #2}\\
+	\end{tabular*}
+	\vspace{-20pt}
+}
+
+%-------------------------
+% List Formatting Commands
+%-------------------------
+
+% Start and end of a subheading list
+\newcommand{\cvSubHeadingListStart}{\begin{itemize}[leftmargin=0.0em, label={}]}
+		\newcommand{\cvSubHeadingListEnd}{\end{itemize}}
+
+% Start and end of an item list
+\newcommand{\cvItemListStart}{\begin{itemize}}
+		\newcommand{\cvItemListEnd}{\end{itemize}\vspace{-12pt}}
+
+%-------------------------
+% Publication Formatting Commands
+%-------------------------
+
+% Formatting for journal entries
+% 1 - Author
+% 2 - Title
+% 3 - Journal
+% 4 - Volume, Issue
+% 5 - Page
+% 6 - Date
+% 7 - hyperlink
+% 8 - DOI
+\newcommand{\cvJournal}[8]{
+	\item\small{{#1}, ``#2,'' \textit{#3}, #4, #5, #6, \texttt{\footnotesize doi:\href{#7}{{#8}}}}
+}
+
+% Formatting for conference proceedings
+% 1 - Author
+% 2 - Title
+% 3 - Conference
+% 4 - Place
+% 5 - Date
+% 6 - Page
+% 7 - hyperlink
+% 8 - DOI
+\newcommand{\cvConference}[8]{
+	\item\small{{#1}, ``#2,'' in \textit{#3}, #4, #5, #6, \texttt{\footnotesize doi:\href{#7}{{#8}}}}
+}
+
+% Formatting for conference proceedings with Editors (special w/ book)
+% 1 - Author
+% 2 - Title
+% 3 - Conference
+% 4 - Editor
+% 5 - Place
+% 6 - Date
+% 7 - Page
+% 8 - hyperlink
+% 9 - DOI
+\newcommand{\cvConferenceEditor}[9]{
+	\item\small{{#1}, ``#2,'' in \textit{#3}, #4, Eds. #5, #6, #7, \texttt{\footnotesize doi:\href{#8}{{#9}}}}
+}
+
+% Start and end of a publication list (bullet points)
+\newcommand{\cvPublicationListStart}{\begin{itemize}[leftmargin=*]}
+		\newcommand{\cvPublicationListEnd}{\end{itemize}}
+
+% Start and end of a Journal list
+\newcommand{\cvJournalListStart}{\begin{enumerate}[label={[\small J.\arabic*]}]}
+		\newcommand{\cvJournalListEnd}{\end{enumerate}}
+
+% Start and end of a Conference list
+\newcommand{\cvConfListStart}{\begin{enumerate}[label={\small [C.\arabic*]}]}
+		\newcommand{\cvConfListEnd}{\end{enumerate}}
+
+% Start and end of a Workshop Publication list
+\newcommand{\cvWorkshopListStart}{\begin{enumerate}[label={\small [W.\arabic*]}]}
+		\newcommand{\cvWorkshopListEnd}{\end{enumerate}}
+
+%-------------------------
+% Custom Symbol Commands
+%-------------------------
+
+% Pretty typesetting for C++ and C#
+\newcommand{\CPP}{C\nolinebreak\hspace{-.1em}{\texttt{\large+}}\nolinebreak\hspace{-.1em}{\texttt{\large+}}}
+\newcommand{\Csharp}{C\texttt{\large\#}}
+
+% Adjust bullet styles for lists
+\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}

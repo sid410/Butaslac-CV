@@ -1,0 +1,63 @@
+% Document Font and Encoding
+\usepackage[T1]{fontenc}       % Chooses T1 font encoding
+\input{glyphtounicode}         % Allows the PDF to be searchable and copyable
+
+\usepackage{wrapfig}          % Allows figures or tables to have text wrapped around them
+\usepackage{changepage}       % Adjust margins for part of the document
+\usepackage[english]{babel}   % Multilingual support for English
+\usepackage{verbatim}         % Adds text verbatim
+\raggedright                  % Right aligns text
+\raggedbottom                 % Prevents stretching of text to fill the page vertically
+
+% Page Layout and Geometry
+\usepackage[empty]{fullpage}   % Sets page margins to be mostly empty
+\usepackage[left=1.4cm,right=1.4cm,top=1.4cm,bottom=1.4cm,footskip=1.4cm]{geometry} % Defines the geometry of the page
+\addtolength{\oddsidemargin}{-0.15in} % Adjusts the odd side margin
+\addtolength{\textwidth}{0.3in}       % Adjusts the text width
+
+% Fonts and Symbols
+\usepackage{latexsym}         % Access to LaTeX symbols
+\usepackage{marvosym}         % Access to Martin Vogel's Symbols
+\usepackage{fontawesome5}     % Access to FontAwesome icons
+
+% Color and Graphics
+\usepackage[usenames,dvipsnames]{color}  % Allows the use of color names
+\usepackage{xcolor}                      % Driver-independent color extensions
+\usepackage{graphicx}                    % Enhanced support for graphics
+\definecolor{darkgray}{gray}{0.4}        % Custom color definition
+
+% Hyperlinks
+\usepackage[hidelinks]{hyperref} % Provides LaTeX the ability to create hyperlinks
+
+% Tables and Tabular Data
+\usepackage{tabularx}         % Enhanced tables with adjustable-width columns
+\setlength{\tabcolsep}{0pt}   % Sets the space between columns
+
+% Multi-column Layouts
+\usepackage{multicol}            % Allows for multi-column layouts
+\setlength{\multicolsep}{-3.0pt} % Adjusts spacing before and after multicolumn text
+\setlength{\columnsep}{-1pt}     % Sets space between columns
+
+% Lists and Enumerations
+\usepackage{enumitem}         % Control layout of itemize, enumerate, description
+
+% Text Formatting and Layout Adjustments
+\usepackage{titlesec}         % Allows customization of titles
+\titleformat{\section}{
+	\vspace{-4pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}] % Custom section titles
+
+% Headers and Footers
+\usepackage{fancyhdr}          % Allows for custom headers and footers
+\usepackage{lastpage}          % Reference for the last page
+\pagestyle{fancy}              % Sets the page style to fancy
+\fancyhf{}                     % Clears the header and footer
+\fancyfoot[L]{\textcolor{darkgray}{\footnotesize Butaslac CV \hfill Page \thepage\ of \pageref*{LastPage}}} % Custom footer
+\renewcommand{\headrulewidth}{0pt} % Removes the header line
+\renewcommand{\footrulewidth}{0pt} % Removes the footer line
+\setlength{\footskip}{14pt} % Adjusts the space from the bottom margin to the footer
+
+% Misc Settings
+\overfullrule=5pt             % Highlights overfull hboxes
+\urlstyle{same}               % URL fonts match text font
+\pdfgentounicode=1            % Ensure generated PDF is machine readable/ATS parsable
