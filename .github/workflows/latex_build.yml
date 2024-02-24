@@ -25,24 +25,22 @@ jobs:
         pdflatex -output-directory=build butaslac_cv.tex
 
     - name: Create a new tag
-      id: new_tag
       env:
         TZ: 'Asia/Tokyo'
       run: |
-        # Create a tag based on the current date and time
         TAG=$(date +v%Y%m%d-%H%M%S)
         echo "Creating tag $TAG"
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git tag $TAG
         git push origin $TAG
-        echo "::set-output name=tag::$TAG" # Set the tag as an output to use in the next step
+        echo "NEW_TAG=$TAG" >> $GITHUB_ENV
 
     - name: Create Release
       uses: softprops/action-gh-release@v1
       with:
         files: build/butaslac_cv.pdf
-        tag_name: ${{ steps.new_tag.outputs.tag }}
-        name: Release ${{ steps.new_tag.outputs.tag }}
+        tag_name: ${{ env.NEW_TAG }}
+        name: Release ${{ env.NEW_TAG }}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
