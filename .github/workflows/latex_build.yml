@@ -27,8 +27,8 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          tagName: latest-release
-          releaseName: Latest Release
-          fileName: build/butaslac_cv.pdf
+          tag: latest-release
+          name: Latest Release
+          artifact: build/butaslac_cv.pdf
           allowUpdates: true
-          commitish: main
+          commit: main
