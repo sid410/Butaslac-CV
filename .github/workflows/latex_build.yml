@@ -29,6 +29,6 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           tag: latest-release
           name: Latest Release
-          artifact: build/butaslac_cv.pdf
+          artifacts: build/butaslac_cv.pdf
           allowUpdates: true
           commit: main
