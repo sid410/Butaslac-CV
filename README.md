@@ -4,6 +4,8 @@ This CV reflects my academic journey.
 
 ## Download
 
+![Workflow name](https://github.com/sid410/Butaslac-CV/actions/workflows/latex_build.yml/badge.svg?branch=main)
+
 Changes are automatically updated with CI/CD, and the latest version is always accessible through the following link:
 
 https://github.com/sid410/Butaslac-CV/releases/download/latest-release/butaslac_cv.pdf
